@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jan 2019 pada 18.41
+-- Waktu pembuatan: 09 Jan 2019 pada 19.08
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.3
 
@@ -74,7 +74,8 @@ INSERT INTO `product` (`id`, `name`, `stock`, `available`, `image_link`, `descri
 (1, 'Snowy Things', 5, 5, 'https://i.ibb.co/Q6hjr5T/123.jpg', 'Memiliki warna putih yang menarik dan sangat indah.', 'F', 'L', 68000, 0),
 (2, 'Colorful Buttefly', 2, 2, 'https://i.ibb.co/1vYGZwZ/hqdefault.jpg', 'Motif kupu-kupu yang sangat indah dengan warna-warna yang mencolok mata anda.', 'F', 'S', 50000, 0),
 (3, 'Surise', 1, 1, 'https://i.ibb.co/4MLtsyn/karnaval-SMA.jpg', 'Bagaikan mentari yang terbit di pagi hari, kostum ini memberi semangat yang tinggi bagi pemakainya, percayalah!', 'F', 'M', 80000, 0),
-(9, 'Aurora', 4, 4, 'https://www.w3schools.com/w3css/img_lights.jpg', 'Bagus sangad', 'U', 'L', 78000, 0);
+(9, 'Aurora', 4, 4, 'https://www.w3schools.com/w3css/img_lights.jpg', 'Bagus sangad', 'U', 'L', 78000, 0),
+(15, 'Snowy Dummy Things', 33, 5, 'https://i.ibb.co/jyRnL8N/Bestell-Dummy.jpg', 'Dummy Memiliki warna putih yang menarik dan sangat indah.', 'M', 'M', 33, 0);
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,17 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`trans_id`, `from_customer`, `product_id`, `amount`, `status`, `track_no`, `date_created`, `max_delivery_date`, `date_returned`, `total_price`, `returned_track_no`) VALUES
 (1, 'dian', 1, 1, 'Menunggu Pembayaran', '', '2019-01-08', '2019-01-09', '0000-00-00', 68000, ''),
-(2, 'ratna', 2, 1, 'Telah Dikembalikan', 'JT442928', '2019-01-03', '2019-01-04', '2019-01-07', 200000, 'JT983742');
+(2, 'ratna', 2, 1, 'Telah Dikembalikan', 'JT442928', '2019-01-03', '2019-01-04', '2019-01-07', 200000, 'JT983742'),
+(3, 'dian', 2, 1, 'Telah Dibayar', '', '2019-01-08', '2019-01-09', '0000-00-00', 68000, ''),
+(4, 'ratna', 3, 1, 'Sedang Dikemas', '', '2019-01-08', '2019-01-09', '0000-00-00', 68000, ''),
+(5, 'ratna', 3, 1, 'Sedang Dikirim', 'JT3453452', '2019-01-08', '2019-01-09', '0000-00-00', 68000, ''),
+(6, 'dian', 2, 1, 'Telah Diterima', 'JT983748', '2019-01-08', '2019-01-09', '0000-00-00', 68000, ''),
+(7, 'ratna', 3, 1, 'Sedang Dikembalikan', 'JT3453452', '2019-01-08', '2019-01-09', '0000-00-00', 68000, 'JT3452325'),
+(8, 'UbahUbah', 1, 1, 'Sedang Dikirim', 'JT34382', '2019-01-08', '2019-01-09', '0000-00-00', 68000, 'JT606'),
+(9, 'hfhhgfh', 99, 1, 'Menunggu Pembayaran', '', '2019-01-01', '0000-00-00', '0000-00-00', 50000, ''),
+(10, 'dian', 9, 1, 'Sedang Dikembalikan', 'JT34634', '2019-01-01', '0000-00-00', '0000-00-00', 50000, ''),
+(11, 'dian', 2, 1, 'Menunggu Pembayaran', '', '2019-01-01', '0000-00-00', '0000-00-00', 50000, ''),
+(12, 'ratna', 9, 1, 'Telah Dikembalikan', 'undefined', '2019-01-01', '0000-00-00', '0000-00-00', 50000, '');
 
 --
 -- Indexes for dumped tables
@@ -161,13 +172,13 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT untuk tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `trans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `trans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
