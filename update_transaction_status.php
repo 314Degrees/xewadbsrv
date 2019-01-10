@@ -5,9 +5,14 @@
 
 	$editTransactionStatus['id'] = $_GET['id'];
 	$editTransactionStatus['status'] = $_GET['status'];
-	$editTransactionStatus['track_no'] = $_GET['track_no'];
 
-	$query = "UPDATE transaksi SET status = '" . $editTransactionStatus['status'] . "', track_no = '" . $editTransactionStatus['track_no'] . "' WHERE trans_id = '" . $editTransactionStatus['id'] . "'";
+	if (isset($_GET['track_no'])) {	
+		$editTransactionStatus['tracking_no'] = $_GET['track_no'];
+		$query = "UPDATE transaksi SET status = '" . $editTransactionStatus['status'] . "', track_no = '" . $editTransactionStatus['tracking_no'] . "' WHERE trans_id = '" . $editTransactionStatus['id'] . "'";
+	} else if (isset($_GET['returned_track_no'])) {	
+		$editTransactionStatus['tracking_no'] = $_GET['returned_track_no'];
+		$query = "UPDATE transaksi SET status = '" . $editTransactionStatus['status'] . "', returned_track_no = '" . $editTransactionStatus['tracking_no'] . "' WHERE trans_id = '" . $editTransactionStatus['id'] . "'";
+	}
 
 	$result = mysqli_query($conn, $query);
 
