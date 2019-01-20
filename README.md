@@ -10,40 +10,33 @@ xewadbsrv adalah API webservice berbasis PHP yang digunakan oleh [XEWA](https://
 
 #### Data
 
-* name _`<string>`_
-  
+* name _`<string>`_  
   Nama dari kostum yang akan disimpan ke dalam database.
   
-* stock _`<integer>`_
-  
+* stock _`<integer>`_  
   Banyak stok dari kostum yang akan disimpan ke dalam database.
   
-* image_link _`<string>`_
-  
+* image_link _`<string>`_  
   Link gambar dari kostum yang akan disimpan ke dalam database.
   Sertakan `http://` atau `https://`
   
-* description _`<string>`_
-  
+* description _`<string>`_  
   Deskripsi dari kostum yang akan disimpan ke dalam database.
   
-* gender _`{L|P|U}`_
-  
+* gender _`{L|P|U}`_  
   Gender dari kostum yang akan disimpan ke dalam database.
   L : Laki-laki
   P : Perempuan
   U : Unisex
   
-* size _`{S|M|L|XL}`_
-  
+* size _`{S|M|L|XL}`_  
   Ukuran dari kostum yang akan disimpan ke dalam database.
   S : Small
   M : Medium
   L : Large
   XL : Extra Large
   
-* price _`<integer>`_
-  
+* price _`<integer>`_  
   Harga dari kostum yang akan disimpan ke dalam database.
   
 > Example :
